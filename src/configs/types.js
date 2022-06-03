@@ -1,0 +1,6 @@
+export const CARDS_FILMS = "CARDS_FILMS";
+export const CARDS_PEOPLE = "CARDS_PEOPLE";
+export const CARDS_PLANETS = "CARDS_PLANETS";
+export const CARDS_SPECIES = "CARDS_SPECIES";
+export const CARDS_STARSHIPS = "CARDS_STARSHIPS";
+export const CARDS_VEHICLES = "CARDS_VEHICLES";

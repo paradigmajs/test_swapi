@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { Get_all_data } from "./configs/ListSlice";
+import Navigation from "./navigation";
+import PreviewPage from "./navigation/Pages/PreviewPage";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App() {
+  const dispatch = useDispatch();
+  const [show, setShow] = useState(true);
+  useEffect(() => {
+    Get_all_data(dispatch);
+    setTimeout(() => {
+      setShow(false);
+    }, 35000);
+  }, []);
+  return show ? <PreviewPage /> : <Navigation />;
 }
-
-export default App;
